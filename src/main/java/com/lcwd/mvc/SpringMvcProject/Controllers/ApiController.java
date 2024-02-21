@@ -1,12 +1,16 @@
 package com.lcwd.mvc.SpringMvcProject.Controllers;
 import java.util.Arrays;
 import java.util.List;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+//@Controller
 @RequestMapping("api")
 public class ApiController 
 {
@@ -14,7 +18,7 @@ public class ApiController
 //	@ResponseBody
 	public String helloApi()
 	{
-		return "hello api is my first api ";
+		return "";
 	}
 	
 	@RequestMapping(value="/users",method=RequestMethod.GET)
@@ -32,6 +36,20 @@ public class ApiController
 		System.out.println("process users");
 		
 		return "new user created !!";
+	}
+	
+	@RequestMapping("/count")
+	public void getcount()
+	{
+		System.out.println("count of users ");
+		
+	}
+	@RequestMapping("/taraji")
+	public void getTaraji()
+	{
+		System.out.println("return type not required");
+		
+		return ;
 	}
 	
 	
